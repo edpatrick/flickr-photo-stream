@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "removeComments": true,
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "target": "es5",
+        "jsx": "react",
+        "preserveConstEnums": true,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "lib": ["es5", "es2015", "es2016", "dom"],
+        "typeRoots": ["./node_modules/@types", "./typings"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "paths": {
+          "app/*": ["src/*"]
+        }
+    },
+    "include": ["src", "typings"]
+}
