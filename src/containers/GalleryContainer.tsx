@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Input } from "../components/Forms/Input";
 import { ImagePanel } from "../components/Images/ImagePanel";
-import { Loader } from "../components/Utility/Loader";
+import { LoadingSpinner } from "../components/Utility/LoadingSpinner";
 import { getFlickrImages, IPhotoModel, IRequestModel, IResponseModel } from "../queries/getFlickrImages";
+
+import * as Styles from "./GalleryContainer.scss";
 
 const SearchResults = React.lazy(() => import("../Components/Search/SearchResults"));
 
@@ -26,24 +28,32 @@ export class GalleryContainer extends React.Component<{}, IState> {
 
     public render(): JSX.Element {
 
-        const images = this.state.photos.map((photo) => {
+        const images = this.state.photos.map((photo, index) => {
             return (
                 <ImagePanel
-                    key={photo.id}
+                    key={index}
                     id={photo.id}
                     src={photo.thumbnailUrl}
                     title={photo.title}
                     owner={photo.owner}
                     description={photo.description}
+                    tags={photo.tags.split(" ")}
                 />
             );
         });
 
         return (
-            <div>
-                <h1>Flickr search</h1>
-                <Input value={this.state.query.text} handleChange={this.handleSearch} />
-                <React.Suspense fallback={<Loader loading={true}/>}>
+            <div className={Styles.Container}>
+                <div className={Styles.InputContainer}>
+                    <h1 className={Styles.Title}>Flickr search</h1>
+                    <Input
+                        name="Search"
+                        placeholder="Search Flickr..."
+                        value={this.state.query.text}
+                        handleChange={this.handleSearch}
+                    />
+                </div>
+                <React.Suspense fallback={<LoadingSpinner loading={true} />}>
                     <SearchResults
                         numberOfItems={this.state.photos.length}
                         hasMore={this.hasMoreImages()}

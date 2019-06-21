@@ -1,0 +1,14 @@
+@import "../../styles/common.scss";
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include font-family();
+}
+
+.LoaderContainer {
+    width: 100%;
+    flex: 1 0 100%;
+    margin-bottom: $spacing-unit-x-large;
+}

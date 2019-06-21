@@ -1,0 +1,23 @@
+@import "../../styles/common.scss";
+
+
+.SpinnerContainer {
+    margin-bottom: $spacing-unit;
+    height: 42px;
+}
+
+.Spinner {
+	width: 32px;
+	height: 32px;
+	clear: both;
+	margin: 20px auto;
+	border: 4px rgba(#333333,0.25) solid;
+	border-top: 4px rgba(#333333,1) solid;
+	border-radius: 50%;
+	animation: spinnerRotate .6s infinite linear;
+}
+
+@keyframes spinnerRotate {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}

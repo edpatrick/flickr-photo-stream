@@ -32,9 +32,15 @@ const scssLoader = {
                 modules: {
                     localIdentName: '[name]__[local]--[hash:base64:5]',
                 },
+                importLoaders: 1,
             },
         },
-        "sass-loader"
+        {
+          loader: "sass-loader",
+          options: {
+              sourceMap: true,
+          }
+        }
     ]
 }
 

@@ -1,0 +1,16 @@
+@import "../../styles/common.scss";
+
+$tag-color: #1569C7;
+
+.Tag {
+    border: 1px solid $tag-color;
+    color: $tag-color;
+    padding: $spacing-unit-x-small;
+    @include font-family();
+    font-size: 10px;
+    text-align: center;
+    background-color: rgba($color: $tag-color, $alpha: 0.1);
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}

@@ -1,6 +1,8 @@
 import * as React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {Loader} from "../Utility/Loader";
+import { LoadingSpinner } from "../Utility/LoadingSpinner";
+
+import * as Styles from "./SearchResults.scss";
 
 export interface ISearchResultsProps {
     numberOfItems: number;
@@ -10,13 +12,15 @@ export interface ISearchResultsProps {
 }
 
 export const SearchResults: React.FunctionComponent<ISearchResultsProps> = (props) => {
+    const loadingComponent = <div className={Styles.LoaderContainer}><LoadingSpinner loading={true}/></div>;
     return (
         <div>
         <InfiniteScroll
+            className={Styles.Container}
             dataLength={props.numberOfItems}
             hasMore={props.hasMore}
             next={props.loadMore}
-            loader={<Loader loading={true}/>}
+            loader={loadingComponent}
         >
             {props.children}
         </InfiniteScroll>

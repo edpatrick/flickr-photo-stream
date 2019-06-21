@@ -1,0 +1,21 @@
+@import "../styles/common.scss";
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1024px;
+    margin: 0 auto;
+
+}
+
+.InputContainer {
+    text-align: center;
+    margin-bottom: $spacing-unit-large;
+}
+
+.Title {
+    @include font-size(24px);
+    @include font-family-bold();
+}
