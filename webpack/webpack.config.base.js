@@ -1,5 +1,4 @@
 const path = require('path');
-console.log(__dirname);
 const sourcePath = path.join(__dirname, '../src');
 const outPath = path.join(__dirname, '../dist');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -13,9 +12,7 @@ const loaders = require('./loaders');
 module.exports = {
     entry: path.resolve(sourcePath, 'index.tsx'),
     output: {
-        filename: "bundle.js",
-        chunkFilename: '[name].chunk.js',
-        path: outPath
+        path: outPath,
     },
     devtool: "source-map",
     resolve: {
@@ -38,18 +35,5 @@ module.exports = {
         plugins.HtmlWebpackPlugin,
         plugins.MiniCssExtractPlugin
     ],
-    optimization: {
-        splitChunks: {
-          name: true,
-          cacheGroups: {
 
-            vendors: {
-              test: /[\\/]node_modules[\\/]/,
-              chunks: 'all',
-              priority: -10
-            }
-          }
-        },
-        runtimeChunk: true
-      },
 };

@@ -7,5 +7,18 @@ module.exports = merge(baseConfig, {
         chunkFilename: '[name].[contenthash].chunk.js',
     },
     mode: "production",
-    devtool: "source-map",
+    optimization: {
+        splitChunks: {
+          name: true,
+          cacheGroups: {
+
+            vendors: {
+              test: /[\\/]node_modules[\\/]/,
+              chunks: 'all',
+              priority: -10
+            }
+          }
+        },
+        runtimeChunk: true
+      },
 });

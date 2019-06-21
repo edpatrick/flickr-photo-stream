@@ -1,19 +1,13 @@
 import * as React from "react";
 import { Image, IProps as IPropsImage } from "./Image";
 
+import {IOwnerModel} from "../../queries/getFlickrImages";
+
 import * as Styles from "./Image.scss";
 
-// console.log("yolo");
-console.log(Styles);
-
-interface IOwner {
-    name: string;
-    id: string;
-}
-
 export interface IProps extends IPropsImage {
-    id: number;
-    owner: IOwner;
+    id: string;
+    owner: IOwnerModel;
     description: string;
 }
 
