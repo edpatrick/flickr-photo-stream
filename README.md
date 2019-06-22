@@ -24,7 +24,7 @@ npm i
 npm start
 ```
 
-# Build for prod
+## Build for prod
 
 ```
 npm run build
