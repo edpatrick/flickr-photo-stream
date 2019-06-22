@@ -53,7 +53,7 @@ export class GalleryContainer extends React.Component<{}, IState> {
                         handleChange={this.handleSearch}
                     />
                 </div>
-                <React.Suspense fallback={<LoadingSpinner loading={true} />}>
+                <React.Suspense fallback={<LoadingSpinner loading={true}/>}>
                     <SearchResults
                         numberOfItems={this.state.photos.length}
                         hasMore={this.hasMoreImages()}

@@ -1,6 +1,6 @@
 import * as React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { LoadingSpinner } from "../Utility/LoadingSpinner";
+import { LoadingSpinner } from "../../components/Utility/LoadingSpinner";
 
 import * as Styles from "./SearchResults.scss";
 

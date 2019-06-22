@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import * as Styles from "./Loader.scss";
 
 interface ILoaderProps {

@@ -25,7 +25,7 @@ export const ImagePanel: React.FunctionComponent<IProps> = (props) => {
             </span>
         </div>
     );
-    const description = props.description ? <div className={Styles.ImageDescription}>{props.description}</div>: null;
+    const description = props.description ? <div className={Styles.ImageDescription}>{props.description}</div> : null;
     let tags = null;
     if (props.tags) {
         tags = props.tags.map((tag, index) => <Tag key={index} text={tag} />);
